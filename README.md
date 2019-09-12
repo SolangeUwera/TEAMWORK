@@ -18,5 +18,7 @@ Teamwork is an ​internal social network for organizations’ employees. The go
  # Optional Features
  
 ● Employees can view all articles that belong to a category (tag).
+
 ● Employees can flag a comment, or article as inappropriate.  
+
 ● Admin can delete a comment, or article flagged as inappropriate. 
