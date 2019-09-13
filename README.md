@@ -30,9 +30,11 @@ UI Images
 -CSS 
 -Javascript
 
+# Links
+1.Pivotal Tracker  Link: https://www.pivotaltracker.com/n/projects/2396221
+2.Gh-pages :https://solangeuwera.github.io/TEAMWORK/UI
+
 # Author
 UWERA Solange
 
-# Links
--1.Pivotal Tracker  Link: https://www.pivotaltracker.com/n/projects/2396221
--2.Gh-pages :
+
