@@ -4,6 +4,7 @@ Teamwork is an ​internal social network for organizations’ employees. The go
 
 # project description
 UI Images
+![](Images/SNP5.PNG)
 
 
 # REQUIREMENT FEATURES
