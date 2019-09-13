@@ -24,3 +24,10 @@ UI Images
 ● Employees can flag a comment, or article as inappropriate.  
 
 ● Admin can delete a comment, or article flagged as inappropriate. 
+
+ # Frontend
+HTML
+CSS -Javascript
+
+# Author
+UWERA Solange
