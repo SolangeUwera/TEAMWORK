@@ -26,8 +26,9 @@ UI Images
 ● Admin can delete a comment, or article flagged as inappropriate. 
 
  # Frontend
-HTML
-CSS -Javascript
+-HTML
+-CSS 
+-Javascript
 
 # Author
 UWERA Solange
