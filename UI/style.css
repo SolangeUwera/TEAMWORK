@@ -163,7 +163,7 @@ font-size: 1em
 .home-section{
     background: url(./images/back0.jpg);
     width: 100%;
-    min-height: 40vw;
+    min-height: 80vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -315,3 +315,9 @@ ul.topnav {
     background-repeat: no-repeat;
     background-size: cover;
 }
+/*delete*/
+.delete{
+    margin-left:50%;
+    
+}
+
