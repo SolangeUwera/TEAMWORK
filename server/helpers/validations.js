@@ -10,7 +10,11 @@ const schema = {
 		Department: joi.string().min(2).trim().required(),
 		Adress: joi.string().min(2).trim().required(),
 		password: joi.string().required()
-    })
+	}),
+	signin: joi.object().keys({
+		email: joi.string().email().trim().required(),
+		password: joi.string().required()
+	})
   
 
 };
@@ -19,6 +23,14 @@ class validate {
     static signup(req, res, next) {
         const {firstName, lastName, email,Gender,JobRole,Department,Adress, password} = req.body;
         const {error} = joi.validate({firstName, lastName, email,Gender,JobRole,Department,Adress, password}, schema.signup);
+		if (error) {
+			return res.status(400).send({ status: 400,  error: error.details[0].message });
+		}
+        next();
+	};
+	static signin(req, res, next) {
+        const {email, password} = req.body;
+        const {error} = joi.validate({email, password}, schema.signin);
 		if (error) {
 			return res.status(400).send({ status: 400,  error: error.details[0].message });
 		}
