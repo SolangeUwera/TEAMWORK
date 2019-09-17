@@ -55,6 +55,18 @@ class Users {
     data.articles.push(editedarticle);
     
     return res.status(200).send({status:200,message: 'article is successful edited',data:{title,article}})
+    };
+    deleteanarticle(req,res){
+        const {title,article}=req.body;
+        const found = data.articles.find(article =>article.title === title);
+    if(!found) {
+        return res.status(404).send({status: 409, error: 'article is not exist'});
+    }
+    const articleId = data.articles.length - 1;
+    const deletedarticle = {title,article ,id: articleId}
+    data.articles.push(deletedarticle);
+    
+    return res.status(200).send({status:200,message: 'article is successful deleted',data:{title,article}})
     }; 
 
 }

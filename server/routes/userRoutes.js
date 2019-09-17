@@ -7,5 +7,5 @@ router.post('/signup', validate.signup, Users.signup);
 router.post('/signin', validate.signin, Users.signin);
 router.post('/createanarticle', validate.createanarticle, Users.createanarticle);
 router.patch('/editanarticle', validate.editanarticle, Users.editanarticle);
-
+router.delete('/deleteanarticle', validate.deleteanarticle, Users.deleteanarticle);
 export default router;
