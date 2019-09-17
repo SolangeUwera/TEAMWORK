@@ -1,3 +1,4 @@
+import moment from 'moment';
 import data from '../models/data';
 import Helpers from '../helpers/helpers';
 
@@ -67,7 +68,25 @@ class Users {
     data.articles.push(deletedarticle);
     
     return res.status(200).send({status:200,message: 'article is successful deleted',data:{title,article}})
-    }; 
+    };
+    
+    commentonanarticle(req,res){
+    const {articletitle,article,comment,createdOn}=req.body;
+    
+    const commentId = data.comments.length + 1;
+    const newcomment ={
+        id: commentId,
+        createdOn: moment().format(),
+        articletitle,
+        article,
+        comment,
+        
+    };
+    data.comments.push(newcomment);
+    
+    return res.status(201).send({status:201,message: 'relavent success message',data:{createdOn,articletitle,article,comment}})
+    };   
+
 
 }
 

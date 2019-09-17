@@ -26,8 +26,14 @@ const schema = {
 	deleteanarticle: joi.object().keys({
 		title: joi.string().trim().required(),
 		article: joi.string().required()
-	})  
-
+	}),  
+	commentonanarticle: joi.object().keys({
+		
+		articletitle: joi.string().trim().required(),
+		article: joi.string().trim().required(),
+		comment: joi.string().trim().required()
+		
+	}),
 };
 
 class validate {
@@ -72,5 +78,16 @@ class validate {
 				}
 				next();
 				}
+
+				static commentonanarticle(req,res,next){  
+					const {articletitle,article,comment} = req.body;
+					const {error} = joi.validate({articletitle,article,comment}, schema.commentonanarticle);
+					if (error) {
+						return res.status(400).send({ status: 400,  error: error.details[0].message });
+					}
+					next();
+					}			
+
+
 }
 export default validate;
