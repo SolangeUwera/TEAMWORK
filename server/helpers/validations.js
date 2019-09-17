@@ -19,7 +19,10 @@ const schema = {
 		title: joi.string().trim().required(),
 		article: joi.string().required()
 	}),
-
+	editanarticle: joi.object().keys({
+		title: joi.string().trim().required(),
+		article: joi.string().required()
+	}),
   
 
 };
@@ -49,7 +52,14 @@ class validate {
 		}
 		next();
 		}
-		
+		static editanarticle(req,res,next){  
+			const {title, article} = req.body;
+			const {error} = joi.validate({title,article},schema.editanarticle);
+			if (error) {
+				return res.status(400).send({ status: 400,  error: error.details[0].message });
+			}
+			next();
+			}	
     
 }
 export default validate;
