@@ -8,4 +8,5 @@ router.post('/signin', validate.signin, Users.signin);
 router.post('/createanarticle', validate.createanarticle, Users.createanarticle);
 router.patch('/editanarticle', validate.editanarticle, Users.editanarticle);
 router.delete('/deleteanarticle', validate.deleteanarticle, Users.deleteanarticle);
+router.post('/comments',validate.commentonanarticle,Users.commentonanarticle );
 export default router;
