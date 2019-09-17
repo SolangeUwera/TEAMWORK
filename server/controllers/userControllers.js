@@ -45,7 +45,17 @@ class Users {
     return res.status(200).send({status:200,message: 'article is successful created',data:{title,article}})
     };
     
+    editanarticle(req,res){
+        const {title,article}=req.body;
+        const found = data.articles.find(article =>article.title === title);
+    if(!found) {
+        return res.status(404).send({status: 409, error: 'article is not exist'});
+    }
+    const editedarticle = {title,article ,id: articleId}
+    data.articles.push(editedarticle);
     
+    return res.status(200).send({status:200,message: 'article is successful edited',data:{title,article}})
+    }; 
 
 }
 
