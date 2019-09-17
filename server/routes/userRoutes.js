@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post('/signup', validate.signup, Users.signup);
 router.post('/signin', validate.signin, Users.signin);
-git checkout
+router.post('/createanarticle', validate.createanarticle, Users.createanarticle);
+
 export default router;

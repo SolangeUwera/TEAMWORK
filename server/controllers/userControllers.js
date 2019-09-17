@@ -32,7 +32,20 @@ class Users {
         delete newData.password;
         return res.status(200).send({status: 200, message: 'user is sucessfully Loged in'});
     };
-
+    createanarticle(req,res){
+        const {title,article}=req.body;
+        const alreadyExist = data.articles.find(article =>article.title === title);
+    if(alreadyExist) {
+        return res.status(409).send({status: 409, error: 'article already exist'});
+    }
+    const articleId = data.articles.length + 1;
+    const newarticle = {title,article ,id: articleId}
+    data.articles.push(newarticle);
+    
+    return res.status(200).send({status:200,message: 'article is successful created',data:{title,article}})
+    };
+    
+    
 
 }
 
