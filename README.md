@@ -1,6 +1,8 @@
 # TEAMWORK
 
+[![Build Status](https://travis-ci.org/SolangeUwera/TEAMWORK.svg?branch=develop)](https://travis-ci.org/SolangeUwera/TEAMWORK)
 Teamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. 
+
 
 # project description
  UI Images
@@ -19,13 +21,6 @@ Teamwork is an ​internal social network for organizations’ employees. The go
 7. Employees can view all articles showing the most recently posted articles first. 
 8. Employees can view a specific article. 
 
- # Optional Features
- 
-● Employees can view all articles that belong to a category (tag).
-
-● Employees can flag a comment, or article as inappropriate.  
-
-● Admin can delete a comment, or article flagged as inappropriate. 
 
  # Frontend
 -HTML
