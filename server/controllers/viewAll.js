@@ -1,7 +1,6 @@
 import  jwt from 'jsonwebtoken';
-import moment from 'moment';
 import data from '../models/data';
-import Helpers from '../helpers/helpers';
+
 
 class Users6 {
     viewallarticle(req, res) {
