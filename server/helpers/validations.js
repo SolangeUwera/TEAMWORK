@@ -23,17 +23,12 @@ const schema = {
 		title: joi.string().trim().required(),
 		article: joi.string().required()
 	}),
-	deleteanarticle: joi.object().keys({
-		title: joi.string().trim().required(),
-		article: joi.string().required()
-	}),  
+
 	commentonanarticle: joi.object().keys({
-		
-		articletitle: joi.string().trim().required(),
-		article: joi.string().trim().required(),
 		comment: joi.string().trim().required()
 		
 	}),
+
 };
 
 class validate {
@@ -48,6 +43,14 @@ class validate {
 	static signin(req, res, next) {
         const {email, password} = req.body;
         const {error} = joi.validate({email, password}, schema.signin);
+		if (error) {
+			return res.status(400).send({ status: 400,  error: error.details[0].message });
+		}
+        next();
+	};
+	static commentonanarticle(req, res, next) {
+        const {comment} = req.body;
+        const {error} = joi.validate({comment}, schema.commentonanarticle);
 		if (error) {
 			return res.status(400).send({ status: 400,  error: error.details[0].message });
 		}
@@ -70,24 +73,6 @@ class validate {
 			next();
 			}	
 	
-			static deleteanarticle(req,res,next){  
-				const {title, article} = req.body;
-				const {error} = joi.validate({title,article},schema.deleteanarticle);
-				if (error) {
-					return res.status(400).send({ status: 400,  error: error.details[0].message });
-				}
-				next();
-				}
-
-				static commentonanarticle(req,res,next){  
-					const {articletitle,article,comment} = req.body;
-					const {error} = joi.validate({articletitle,article,comment}, schema.commentonanarticle);
-					if (error) {
-						return res.status(400).send({ status: 400,  error: error.details[0].message });
-					}
-					next();
-					}			
-
 
 }
 export default validate;
