@@ -2,14 +2,14 @@ import joi from 'joi';
 
 const schema = {
 	signup: joi.object().keys({
-		firstName: joi.string().min(2).trim().required(),
-		lastName: joi.string().min(2).trim().required(),
+		firstName: joi.string().min(4).regex(/^[a-zA-Z]+$/).trim().required(),
+		lastName: joi.string().min(4).regex(/^[a-zA-Z]+$/).trim().required(),
 		email: joi.string().email().trim().required(),
-		Gender: joi.string().min(1).trim().required(),
+		Gender: joi.string().valid('F', 'M', 'f', 'm').min(1).trim().required(),
 		JobRole: joi.string().min(2).trim().required(),
 		Department: joi.string().min(2).trim().required(),
 		Adress: joi.string().min(2).trim().required(),
-		password: joi.string().required()
+		password: joi.string().min(5).required()
 	}),
 	signin: joi.object().keys({
 		email: joi.string().email().trim().required(),
