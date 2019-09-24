@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>internal social network</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
 
     <div class="form">
         <form>
             <div>
-                <img src="./images/img_avatar3.png" class=" img-center"/>
+                <img src="../images/img_avatar3.png" class=" img-center"/>
                 <div class="login-title to-center">
                     <label id="login-title">Sign Up</label>
                 </div>
@@ -30,7 +30,12 @@
 
                 <input type="text" placeholder="Phone Number" name="phoneNumber" class="full-width" id="phoneNumber" required>
                 <br /><br />
-                <input type="text" placeholder="Gender" name="Gender"  class="full-width"  required>
+                <select  class="full-width"  required>
+                        <option value="">Select gender</option>
+                    <option value="male">M</option>
+                    <option value=female>F</option>
+                    </select>
+               
                 <br /><br />
                 <input type="text" placeholder="JobRole" name="JobRole"  class="full-width"  required>
                 <br /><br />

@@ -189,7 +189,7 @@ font-size: 1em
 
 .home-section{
     /*background: url(./images/back0.jpg) ;*/
-    background:url(./images/back0.jpg) center/cover no-repeat;
+    background:url(../images/back0.jpg) center/cover no-repeat;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -337,7 +337,7 @@ ul.topnav {
 
   /*employee*/
   .home-sectione{
-    background: url(./images/back0.jpg);
+    background: url(../images/back0.jpg);
     width: 100%;
     min-height: 80vw;
     background-position: center;
