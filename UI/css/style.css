@@ -43,6 +43,7 @@ footer{
 
 }
 .form {
+    
     margin-top: 10p;
     padding: 5px;
     width: 950px;
@@ -74,6 +75,7 @@ footer{
 @media screen and (max-width:400px){
 
     .form {
+       
         margin-top: -10%;
         width: 100%;
         margin: auto;
@@ -137,7 +139,7 @@ a{
 }
 }
 
-input,fieldset, textarea{
+input,fieldset, textarea,select{
     width: 100%;
     padding: 0.1em;
     margin: 2px;
@@ -147,8 +149,17 @@ input,fieldset, textarea{
     border-left: 3px solid rgba(42, 58, 92, 0.8);
 
 }
+select{
+    width: 100%;
+    height:50px;
+    padding: 0.1em;
+    margin: 2px;
+    font-size: 1.2em;
+    border-radius: 0.1em;
+}
+
 @media screen and (max-width: 600px) {
-.input{width: 100%;
+.input,select{width: 100%;
 }
   }
   @media screen and (max-width: 600px) {
@@ -339,7 +350,7 @@ ul.topnav {
   .home-sectione{
     background: url(../images/back0.jpg);
     width: 100%;
-    min-height: 80vw;
+    min-height: 80vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -394,3 +405,23 @@ ul.topnav {
         margin-right: auto;
     }
   }
+
+
+
+
+
+
+.img {
+    border-radius: 50%;
+    width:50px;
+    float:left;
+    margin-left: 15%;
+    margin-right:15px
+}
+.comment {
+    float:left;
+    width:100px;
+}
+.commen{
+    margin-left: 5%;
+}
