@@ -4,18 +4,20 @@ import Helpers from '../helpers/helpers';
 
 class Users7 {
     editanarticle(req,res){
-    const{id:userId} =req.query
-     const {title,article:newarticle}=req.body;
-     const found = data.articles.findIndex((article =>article.title === title) && (article =>article.authorId === userId));
-     console.log(found);
-     if(found == -1)  {
-     return res.status(404).send({status: 409, error: 'article is not exist'});
+     const { id } = req.params;
+     const found =data.articles.find((editArticle) => editArticle.articleId == id); 
+     if(!found)  {
+     return res.status(404).send({status: 404, error: 'article is not exist'});
  }
- // const editedarticle = {title,article}
- data.articles[found].article=newarticle;
- return res.status(200).send({status:200,message: 'article is successful edited',data:{title,newarticle}})
-
- 
- 
+ else {
+    const Data = Object.keys(req.body);
+    Data.forEach((data) => {
+        found[data] = req.body[data];
+    });
+    res.status(200).json({
+      status: 200,
+      message: 'successfully Edited',
+    });
  }};
+};
  export default new Users7();

@@ -8,7 +8,7 @@ class Users5 {
         const {id} = req.params;
  
  const alreadyExist = data.articles.find(article =>article.articleId == id);
-        console.log(alreadyExist);
+       // console.log(alreadyExist);
 
         return res.status(200).send({
             status:200,

@@ -19,10 +19,7 @@ signin(req, res) {
     //const newData = {...matching};
     // delete newData.password;
     const {email:useremail,id}=found
-    const  Xtoken = jwt.sign({
-useremail,id
-
-    },process.env.jwt) ; 
+    const  Xtoken = jwt.sign({useremail,id},process.env.JWT) ; 
 
     return res.status(200).send({status: 200, message: `user is sucessfully Loged in `,Xtoken});
 }

@@ -19,10 +19,10 @@ const schema = {
 		title: joi.string().trim().required(),
 		article: joi.string().required()
 	}),
-	editanarticle: joi.object().keys({
+	/*editanarticle: joi.object().keys({
 		title: joi.string().trim().required(),
 		article: joi.string().required()
-	}),
+	}),*/
 
 	commentonanarticle: joi.object().keys({
 		comment: joi.string().trim().required()
@@ -36,7 +36,7 @@ class validate {
         const {firstName, lastName, email,Gender,JobRole,Department,Adress, password} = req.body;
         const {error} = joi.validate({firstName, lastName, email,Gender,JobRole,Department,Adress, password}, schema.signup);
 		if (error) {
-			return res.status(400).send({ status: 400,  error: error.details[0].message });
+			return res.status(422).send({ status: 422,  error: error.details[0].message });
 		}
         next();
 	};
@@ -44,7 +44,7 @@ class validate {
         const {email, password} = req.body;
         const {error} = joi.validate({email, password}, schema.signin);
 		if (error) {
-			return res.status(400).send({ status: 400,  error: error.details[0].message });
+			return res.status(422).send({ status: 422,  error: error.details[0].message });
 		}
         next();
 	};
@@ -52,7 +52,7 @@ class validate {
         const {comment} = req.body;
         const {error} = joi.validate({comment}, schema.commentonanarticle);
 		if (error) {
-			return res.status(400).send({ status: 400,  error: error.details[0].message });
+			return res.status(422).send({ status: 422,  error: error.details[0].message });
 		}
         next();
 	};
@@ -60,18 +60,18 @@ class validate {
 		const {title, article} = req.body;
 		const {error} = joi.validate({title,article}, schema.createanarticle);
 		if (error) {
-			return res.status(400).send({ status: 400,  error: error.details[0].message });
+			return res.status(422).send({ status: 422,  error: error.details[0].message });
 		}
 		next();
 		}
-		static editanarticle(req,res,next){  
+		/*static editanarticle(req,res,next){  
 			const {title, article} = req.body;
 			const {error} = joi.validate({title,article},schema.editanarticle);
 			if (error) {
-				return res.status(400).send({ status: 400,  error: error.details[0].message });
+				return res.status(422).send({ status: 422,  error: error.details[0].message });
 			}
 			next();
-			}	
+			}*/	
 	
 
 }

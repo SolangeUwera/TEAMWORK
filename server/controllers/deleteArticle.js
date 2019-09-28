@@ -8,13 +8,13 @@ class Users4 {
 deleteanarticle(req,res){
     const { id } = req.params;
    const article = data.articles.find(art => art.articleId == id);
-   console.log(article);
+  // console.log(article);
    if (!article) {
     return res.status(404).send({status:404,message: 'article not found'})
    }
    // checking the owner
    const ownerId = req.body.payload.id;
-   const owns = data.articles.find( art => art.authorId == ownerId);
+   const owns = data.articles.find( art => (art.authorId == ownerId && art.articleId == id));
    if(!owns) {
        return res.status(403).send({status: 403, message: 'not authorized to delete this article'})
    }

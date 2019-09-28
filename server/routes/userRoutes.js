@@ -14,7 +14,7 @@ const router = express.Router();
 router.post('/auth/signup', validate.signup, Users.signup);
 router.post('/auth/signin', validate.signin, Users1.signin);
 router.post('/articles',auth, validate.createanarticle, Users2.createanarticle);
-router.patch('/articles/:id',auth, validate.editanarticle, Users7.editanarticle);
+router.patch('/articles/:id',auth, Users7.editanarticle);
 router.delete('/articles/:id',auth, Users4.deleteanarticle);
 router.post('/articles/:id/comments', auth, validate.commentonanarticle,Users3.commentonanarticle );
 
