@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/SolangeUwera/TEAMWORK.svg?branch=develop)](https://travis-ci.org/SolangeUwera/TEAMWORK)
 [![Coverage Status](https://coveralls.io/repos/github/SolangeUwera/TEAMWORK/badge.svg?branch=develop)](https://coveralls.io/github/SolangeUwera/TEAMWORK?branch=develop)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0115401c7908a6e90eeb/maintainability)](https://codeclimate.com/github/SolangeUwera/TEAMWORK/maintainability)
+
+
 TEAMWORK)
 Teamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. 
 
