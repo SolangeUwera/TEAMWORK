@@ -21,7 +21,7 @@ class Users {
              Adress,  
              id: userId
 
-        },process.env.jwt) ; 
+        },process.env.JWT) ; 
 
         return res.status(201).send({status: 201,message: 'user created successful',
          datas: {id: userId,firstName, lastName, email,Gender,JobRole,Department,Adress,Xtoken, }})
