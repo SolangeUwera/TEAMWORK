@@ -77,7 +77,7 @@ API endpoints
 # Links
 1.Pivotal Tracker  Link: https://www.pivotaltracker.com/n/projects/2396221
 
-2.Gh-pages :https://solangeuwera.github.io/TEAMWORK/UI
+2.Gh-pages :https://solangeuwera.github.io/TEAMWORK/UI/html/
 
 # Author
 UWERA Solange

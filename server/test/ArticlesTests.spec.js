@@ -98,59 +98,7 @@ describe('Get all Articles (get)', () => {
         });
     });
   });
-  
-//edit
-  describe('Edit articles (patch)', () => {
-    it('It should return 404 the article is not found  ', (done) => {
-      const Signed = {
-        id:2,
-        firstName: 'SOLANGE',
-        lastName:'UWERA',
-        email: 'usolange13@gmail.com',
-        password: '01234five'
-      };
-      const newarticle = {
-        title: 'FootBall ',
-        article: 'FootBall is some thing good for the ones that play it and to the one who like it',
-      };
-      const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
-      chai
-        .request(app)
-        .patch('/api/v1/articles/1')
-        .set('Xtoken', Token)
-        .send(newarticle)
-        .end((err, res) => {
-          expect(res.status).to.equal(404);
-          done();
-        });
-    });
-
-
-
-    it('It should return 200 the article is SUCCESSFUL edited  ', (done) => {
-      const Signed = {
-        id:2,
-        firstName: 'SOLANGE',
-        lastName:'UWERA',
-        email: 'usolange13@gmail.com',
-        password: '01234five'
-      };
-      const newarticle = {
-        title:'pppp',
-        article:'ttttdddddddddd',
-      };
-      const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
-      chai
-        .request(app)
-        .patch('/api/v1/articles/1')
-        .set('Xtoken', Token)
-        .send(newarticle)
-        .end((err, res) => {
-          expect(res.status).to.equal(404);
-          done();
-        });
-    });
-
+    
     //delete
     describe('Delete Article (patch)', () => {
       it('It should return 200 when the article is deleted  ', (done) => {
@@ -260,4 +208,3 @@ it('It should return 404 when a user try to added a comment to a non existing ar
 });
 
 
-});

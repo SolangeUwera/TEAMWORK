@@ -1,12 +1,11 @@
-sudo: false
 language: node_js
 node_js:
-- 8.11.2
-install:
-- npm install
+  - "stable"
+install: npm install
+cache:
+  directories:
+    - node_modules
 script:
-- npm run test
-after_success: npm run coverage
-branches:
-  only:
-  - develop
+  - npm test
+after_success:
+- npm run coveralls
