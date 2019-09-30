@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/SolangeUwera/TEAMWORK.svg?branch=develop)](https://travis-ci.org/SolangeUwera/TEAMWORK)
 [![Coverage Status](https://coveralls.io/repos/github/SolangeUwera/TEAMWORK/badge.svg?branch=develop)](https://coveralls.io/github/SolangeUwera/TEAMWORK?branch=develop)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0115401c7908a6e90eeb/maintainability)](https://codeclimate.com/github/SolangeUwera/TEAMWORK/maintainability)
-
 
 TEAMWORK)
 Teamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. 
@@ -85,7 +83,7 @@ API endpoints
 2.Gh-pages :https://solangeuwera.github.io/TEAMWORK/UI/html/
 
 # How it Works.
-OPEN https://solangeuwera.github.io/TEAMWORK/UI/html/Link and start navigate with different pages.
+OPEN https://solangeuwera.github.io/TEAMWORK/UI/html/  Link and start navigate with different pages.
 
 # Author
 UWERA Solange
