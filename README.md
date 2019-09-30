@@ -84,6 +84,9 @@ API endpoints
 
 2.Gh-pages :https://solangeuwera.github.io/TEAMWORK/UI/html/
 
+# How it Works.
+OPEN https://solangeuwera.github.io/TEAMWORK/UI/html/Link and start navigate with different pages.
+
 # Author
 UWERA Solange
 

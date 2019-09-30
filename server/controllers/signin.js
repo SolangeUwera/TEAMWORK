@@ -16,8 +16,6 @@ signin(req, res) {
     if(!matching) {
         return res.status(401).send({status: 401, error: 'incorrect email or password'});
     }
-    //const newData = {...matching};
-    // delete newData.password;
     const {email:useremail,id}=found
     const  Xtoken = jwt.sign({useremail,id},process.env.JWT) ; 
 

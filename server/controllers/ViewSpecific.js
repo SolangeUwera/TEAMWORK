@@ -1,6 +1,4 @@
-import  jwt from 'jsonwebtoken';
 import data from '../models/data';
-
 
 class Users5 {
 
@@ -8,8 +6,10 @@ class Users5 {
         const {id} = req.params;
  
  const alreadyExist = data.articles.find(article =>article.articleId == id);
-       // console.log(alreadyExist);
-
+ if(!alreadyExist) {
+    return res.status(404).send({status: 404, error: 'article not found'})
+}
+else
         return res.status(200).send({
             status:200,
             message: 'Success',

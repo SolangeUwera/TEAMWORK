@@ -1,6 +1,5 @@
-import  jwt from 'jsonwebtoken';
 import data from '../models/data';
-import Helpers from '../helpers/helpers';
+
 
 class Users7 {
     editanarticle(req,res){
@@ -11,9 +10,10 @@ class Users7 {
  }
  else {
     const Data = Object.keys(req.body);
-    Data.forEach((data) => {
-        found[data] = req.body[data];
-    });
+
+        found[0].title = req.body.title;
+        found[0].article = req.body.article;
+
     res.status(200).json({
       status: 200,
       message: 'successfully Edited',

@@ -56,7 +56,7 @@ describe(' NEW article', () => {
           });
 });
 });
-
+//view all article
 describe('Get all Articles (get)', () => {
     it('It should return 200 when all registered articles Displays  ', (done) => {
       const Signed = {
@@ -100,7 +100,7 @@ describe('Get all Articles (get)', () => {
   });
     
     //delete
-    describe('Delete Article (patch)', () => {
+    describe('Delete Article ', () => {
       it('It should return 200 when the article is deleted  ', (done) => {
         const Signed = {
           id:2,
@@ -161,6 +161,7 @@ describe('Get all Articles (get)', () => {
 
 
 //comment
+describe('Comment on Article ', () => {
 it('It should return 201 when the comment is added to an article  ', (done) => {
   const Signed = {
   id:2,
@@ -205,6 +206,7 @@ it('It should return 404 when a user try to added a comment to a non existing ar
       expect(res.status).to.equal(404);
       done();
     });
+});
 });
 
 
