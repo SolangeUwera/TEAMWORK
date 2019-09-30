@@ -20,11 +20,11 @@ class Users {
              Gender,
              Adress,  
              id: userId
-
+             
         },process.env.JWT) ; 
 
         return res.status(201).send({status: 201,message: 'user created successful',
-         datas: {id: userId,firstName, lastName, email,Gender,JobRole,Department,Adress,Xtoken, }})
+         datas: {id: userId,firstName, lastName, email,password: hashedPassword,Gender,JobRole,Department,Adress,Xtoken, }})
 
     }
     };

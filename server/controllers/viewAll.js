@@ -1,6 +1,4 @@
-import  jwt from 'jsonwebtoken';
 import data from '../models/data';
-
 
 class Users6 {
     viewallarticle(req, res) {

@@ -18,11 +18,13 @@ const schema = {
 	createanarticle: joi.object().keys({
 		title: joi.string().trim().required(),
 		article: joi.string().required()
+		
 	}),
-	/*editanarticle: joi.object().keys({
+	editanarticle: joi.object().keys({
 		title: joi.string().trim().required(),
 		article: joi.string().required()
-	}),*/
+	
+	}),
 
 	commentonanarticle: joi.object().keys({
 		comment: joi.string().trim().required()
@@ -64,14 +66,14 @@ class validate {
 		}
 		next();
 		}
-		/*static editanarticle(req,res,next){  
+		static editanarticle(req,res,next){  
 			const {title, article} = req.body;
 			const {error} = joi.validate({title,article},schema.editanarticle);
 			if (error) {
 				return res.status(422).send({ status: 422,  error: error.details[0].message });
 			}
 			next();
-			}*/	
+			}
 	
 
 }

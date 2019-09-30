@@ -12,8 +12,7 @@ function auth(req,res,next)
     }
     try {
       const decode = jwt.verify(token, process.env.JWT);
-  req.body.payload =decode;
-  
+      req.body.payload =decode;
       next();
     } catch (ex) {
     //   return response.response(res, 401, 'error', 'invalid token.', true);
@@ -21,7 +20,6 @@ function auth(req,res,next)
       
     }
     return (token);
-
 }
 
 export default auth
