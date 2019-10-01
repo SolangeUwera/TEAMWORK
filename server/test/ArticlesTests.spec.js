@@ -98,7 +98,107 @@ describe('Get all Articles (get)', () => {
         });
     });
   });
-    
+  
+//comment
+describe('Comment on Article ', () => {
+it('It should return 201 when the comment is added to an article  ', (done) => {
+  const Signed = {
+  id:2,
+      firstName: 'SOLANGE',
+      lastName:'UWERA',
+      email: 'usolange13@gmail.com',
+      password: '01234five'
+  };
+  const commentArticle = {
+    comment: 'waaoh!!!',
+  };
+  const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
+  chai
+    .request(app)
+    .post('/api/v1/articles/1/comments')
+    .set('Xtoken', Token)
+    .send(commentArticle)
+    .end((err, res) => {
+      expect(res.status).to.equal(201);
+      done();
+    });
+});
+
+it('It should return 404 when a user try to added a comment to a non existing article ', (done) => {
+  const Signed = {
+    id:2,
+      firstName: 'SOLANGE',
+      lastName:'UWERA',
+      email: 'usolange13@gmail.com',
+      password: '01234five'
+  };
+  const commentArticle = {
+    comment: 'puuuuuu !!!',
+  };
+  const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
+  chai
+    .request(app)
+    .post('/api/v1/articles/109/comments')
+    .set('Xtoken', Token)
+    .send(commentArticle)
+    .end((err, res) => {
+      expect(res.status).to.equal(404);
+      done();
+    });
+});
+});
+
+//edit
+describe('Update an Article ', () => {
+it('It should return 200 if the article succed the update  ', (done) => {
+  const Signed = {
+    id:2,
+    firstName: 'SOLANGE',
+    lastName:'UWERA',
+    email: 'usolange13@gmail.com',
+    password: '01234five'
+  };
+  const newarticle = {
+    title: 'Life',
+    article: 'Never Lie',
+  };
+  const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
+  chai
+    .request(app)
+    .patch('/api/v1/articles/2')
+    .set('Xtoken', Token)
+    .send(newarticle)
+    .end((err, res) => {
+      console.log(res.body);
+      expect(res.status).to.equal(200);
+      done();
+    });
+});
+it('It should return 404 the article is not found  ', (done) => {
+  const Signed = {
+    id:2,
+    firstName: 'SOLANGE',
+    lastName:'UWERA',
+    email: 'usolange13@gmail.com',
+    password: '01234five'
+  };
+  const newarticle = {
+    title: ' Life',
+    article: 'Baeutiful thing',
+  };
+  const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
+  chai
+    .request(app)
+    .patch('/api/v1/articles/100')
+    .set('Xtoken', Token)
+    .send(newarticle)
+    .end((err, res) => {
+      expect(res.status).to.equal(404);
+      done();
+    });
+});
+});
+  
     //delete
     describe('Delete Article ', () => {
       it('It should return 200 when the article is deleted  ', (done) => {
@@ -158,55 +258,5 @@ describe('Get all Articles (get)', () => {
         done();
       });
   });
-
-
-//comment
-describe('Comment on Article ', () => {
-it('It should return 201 when the comment is added to an article  ', (done) => {
-  const Signed = {
-  id:2,
-      firstName: 'SOLANGE',
-      lastName:'UWERA',
-      email: 'usolange13@gmail.com',
-      password: '01234five'
-  };
-  const commentArticle = {
-    comment: 'waaoh!!!',
-  };
-  const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
-  chai
-    .request(app)
-    .post('/api/v1/articles/1/comments')
-    .set('Xtoken', Token)
-    .send(commentArticle)
-    .end((err, res) => {
-      expect(res.status).to.equal(201);
-      done();
-    });
-});
-
-it('It should return 404 when a user try to added a comment to a non existing article ', (done) => {
-  const Signed = {
-    id:2,
-      firstName: 'SOLANGE',
-      lastName:'UWERA',
-      email: 'usolange13@gmail.com',
-      password: '01234five'
-  };
-  const commentArticle = {
-    comment: 'puuuuuu !!!',
-  };
-  const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
-  chai
-    .request(app)
-    .post('/api/v1/articles/109/comments')
-    .set('Xtoken', Token)
-    .send(commentArticle)
-    .end((err, res) => {
-      expect(res.status).to.equal(404);
-      done();
-    });
-});
-});
 
 
