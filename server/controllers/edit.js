@@ -4,7 +4,6 @@ import data from '../models/data';
 class Users7 {
     editanarticle(req,res){
      const { id } = req.params;
-     console.log(id)
      const found =data.articles.find((editArticle) => editArticle.articleId === parseInt(id));
 
      if(!found)  {
