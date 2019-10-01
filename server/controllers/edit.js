@@ -4,15 +4,19 @@ import data from '../models/data';
 class Users7 {
     editanarticle(req,res){
      const { id } = req.params;
-     const found =data.articles.find((editArticle) => editArticle.articleId == id); 
+     console.log(id)
+     const found =data.articles.find((editArticle) => editArticle.articleId === parseInt(id));
+
      if(!found)  {
      return res.status(404).send({status: 404, error: 'article is not exist'});
+   
  }
+ 
  else {
     const Data = Object.keys(req.body);
-
-        found[0].title = req.body.title;
-        found[0].article = req.body.article;
+    //console.log(found);
+        found.title = req.body.title;
+        found.article = req.body.article;
 
     res.status(200).json({
       status: 200,
