@@ -2,8 +2,7 @@ import  jwt from 'jsonwebtoken';
 import data from '../models/data';
 import Helpers from '../helpers/helpers';
 
-class Users {
-    signup(req, res) {
+export const signup = (req, res) => {
         const {firstName, lastName, email, password,Gender,JobRole,Department,Adress} = req.body;
         const alreadyExist = data.users.find(user=>user.email === email);
         if(alreadyExist) {
@@ -26,7 +25,24 @@ class Users {
         return res.status(201).send({status: 201,message: 'user created successful',
          data: {id: userId,firstName, lastName, email,Gender,JobRole,Department,Adress,Xtoken, }})
 
-    }
     };
+    export const signin = (req, res) => {
+        const {email, password} = req.body;
+        const Data = data.users.find(user=> user.email === email);
+        if(!Data) {
+            return res.status(404).send({status: 404, error: 'email not found'})
+        }
+        const hashedPassword = Data.password;
+        // CHECKING IF PASSWORD MATCHED
+        const matching = Helpers.checkThepassword(hashedPassword, password);
+        if(!matching) {
+            return res.status(401).send({status: 401, error: 'incorrect email or password'});
+        }
+        const {email:useremail,id} = Data;
+        const  Xtoken = jwt.sign({useremail,id},process.env.JWT) ; 
     
-    export default new Users();
+        return res.status(200).send({status: 200, message: `user is sucessfully Loged in `,
+        info : {id : Data.id,firstName: Data.firstName,lastName:Data.lastName,email: Data.email,Gender: Data.Gender,
+            Jobrole: Data.Jobrole,Department: Data.Department,Address:Data.Adress},Xtoken});
+        
+    };
