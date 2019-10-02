@@ -14,7 +14,11 @@ describe(' NEW article', () => {
     firstName: 'SOLANGE',
     lastName:'UWERA',
     email: 'usolange13@gmail.com',
-    password: '01234five'
+    password: '123456six',
+    Gender:'F',
+    JobRole:'IT',
+    Department:'c.s',
+    Adress:'Musha'
   };
   const newArticle = {
     title: 'The Benefits of Online Collaboration Tools',
@@ -37,7 +41,11 @@ describe(' NEW article', () => {
         firstName: 'SOLANGE',
         lastName:'UWERA',
         email: 'usolange13@gmail.com',
-        password: '01234five' 
+        password: '123456six',
+        Gender:'F',
+        JobRole:'IT',
+        Department:'c.s',
+        Adress:'Musha' 
       }
       const newArticle = {
         title:'pppp',
@@ -64,7 +72,11 @@ describe('Get all Articles (get)', () => {
         firstName: 'SOLANGE',
         lastName:'UWERA',
         email: 'usolange13@gmail.com',
-        password: '01234five'
+        password: '123456six',
+        Gender:'F',
+        JobRole:'IT',
+        Department:'c.s',
+        Adress:'Musha'
       };
       const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
       chai
@@ -85,7 +97,11 @@ describe('Get all Articles (get)', () => {
         firstName: 'SOLANGE',
         lastName:'UWERA',
         email: 'usolange13@gmail.com',
-        password: '01234five'
+        password: '123456six',
+        Gender:'F',
+        JobRole:'IT',
+        Department:'c.s',
+        Adress:'Musha'
       };
       const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
       chai
@@ -107,7 +123,11 @@ it('It should return 201 when the comment is added to an article  ', (done) => {
       firstName: 'SOLANGE',
       lastName:'UWERA',
       email: 'usolange13@gmail.com',
-      password: '01234five'
+      password: '123456six',
+      Gender:'F',
+      JobRole:'IT',
+      Department:'c.s',
+      Adress:'Musha'
   };
   const commentArticle = {
     comment: 'waaoh!!!',
@@ -130,7 +150,11 @@ it('It should return 404 when a user try to added a comment to a non existing ar
       firstName: 'SOLANGE',
       lastName:'UWERA',
       email: 'usolange13@gmail.com',
-      password: '01234five'
+      password: '123456six',
+      Gender:'F',
+      JobRole:'IT',
+      Department:'c.s',
+      Adress:'Musha'
   };
   const commentArticle = {
     comment: 'puuuuuu !!!',
@@ -156,7 +180,11 @@ it('It should return 200 if the article succed the update  ', (done) => {
     firstName: 'SOLANGE',
     lastName:'UWERA',
     email: 'usolange13@gmail.com',
-    password: '01234five'
+    password: '123456six',
+      Gender:'F',
+      JobRole:'IT',
+      Department:'c.s',
+      Adress:'Musha'
   };
   const newarticle = {
     title: 'Life',
@@ -174,13 +202,39 @@ it('It should return 200 if the article succed the update  ', (done) => {
       done();
     });
 });
+it('It should return 403 not authorized to edit this article   ', (done) => {
+  const Signed = {
+      id:1,
+      firstName: 'admin',
+      lastName: 'bar',
+      email: 'admin@gmail.com',
+      password: '123456six',
+      Gender:'F',
+      JobRole:'IT',
+      Department:'c.s',
+      Adress:'Musha'
+  };
+  const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
+  chai
+    .request(app)
+    .patch('/api/v1/articles/3')
+    .set('Xtoken', Token)
+    .end((err, res) => {
+      expect(res.status).to.equal(403);
+      done();
+    });
+});
 it('It should return 404 the article is not found  ', (done) => {
   const Signed = {
     id:2,
     firstName: 'SOLANGE',
     lastName:'UWERA',
     email: 'usolange13@gmail.com',
-    password: '01234five'
+    password: '123456six',
+      Gender:'F',
+      JobRole:'IT',
+      Department:'c.s',
+      Adress:'Musha'
   };
   const newarticle = {
     title: ' Life',
@@ -207,7 +261,11 @@ it('It should return 404 the article is not found  ', (done) => {
           firstName: 'SOLANGE',
           lastName:'UWERA',
           email: 'usolange13@gmail.com',
-          password: '01234five'
+          password: '123456six',
+      Gender:'F',
+      JobRole:'IT',
+      Department:'c.s',
+      Adress:'Musha'
         };
         const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
         chai
@@ -227,7 +285,11 @@ it('It should return 404 the article is not found  ', (done) => {
       firstName: 'SOLANGE',
       lastName:'UWERA',
       email: 'usolange13@gmail.com',
-      password: '01234five'
+      password: '123456six',
+      Gender:'F',
+      JobRole:'IT',
+      Department:'c.s',
+      Adress:'Musha'
     };
     const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
     chai
@@ -246,7 +308,11 @@ it('It should return 404 the article is not found  ', (done) => {
         firstName: 'admin',
         lastName: 'bar',
         email: 'admin@gmail.com',
-        password: '123456six'
+        password: '123456six',
+        Gender:'F',
+        JobRole:'IT',
+        Department:'c.s',
+        Adress:'Musha'
     };
     const Token = jwt.sign(Signed, process.env.JWT, { expiresIn: '24h' });
     chai
