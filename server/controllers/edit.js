@@ -25,6 +25,9 @@ class Users7 {
     res.status(200).json({
       status: 200,
       message: 'successfully Edited',
+      info : {id : found.articleId, createdon: found.createdon, 
+        title:found.title,article:found.article,authorId:found.authorId
+     }
     });
  }};
 };
