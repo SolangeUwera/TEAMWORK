@@ -4,11 +4,16 @@ import data from '../models/data';
 class Users7 {
     editanarticle(req,res){
      const { id } = req.params;
-     const found =data.articles.find((editArticle) => editArticle.articleId === parseInt(id));
+     const found =data.articles.find((Art) => Art.articleId === parseInt(id));
 
      if(!found)  {
      return res.status(404).send({status: 404, error: 'article is not exist'});
    
+ }
+ const ownerId = req.body.payload.id;
+ const owns = data.articles.find( art => (art.authorId == ownerId && art.articleId == id));
+ if(!owns) {
+     return res.status(403).send({status: 403, message: 'not authorized to edit this article'})
  }
  
  else {

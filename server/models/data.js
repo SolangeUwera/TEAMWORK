@@ -4,15 +4,32 @@ const data = {
         firstName: 'admin',
         lastName: 'bar',
         email: 'admin@gmail.com',
-        password: '123456six'
+        password: '123456six',
+        Gender:'F',
+	    JobRole:'IT',
+	    Department:'c.s',
+	    Adress:'Musha'
     },{
         id:2,
         firstName: 'SOLANGE',
         lastName:'UWERA',
         email: 'usolange13@gmail.com',
-        password: '01234five'
+        password: '01234five',
+        Gender:'F',
+	    JobRole:'IT',
+	    Department:'c.s',
+	    Adress:'Musha'
 
-}],
+}, {
+    id:3,
+firstName: 'SOLANGE',
+lastName:'UWERA',
+email: 'usolange13@gmail.com',
+password: '01234five',
+Gender:'F',
+JobRole:'IT',
+Department:'c.s',
+Adress:'Musha'}],
 
  articles :[{
     articleId:1,
