@@ -199,7 +199,6 @@ font-size: 1em
 
 
 .home-section{
-    /*background: url(./images/back0.jpg) ;*/
     background:url(../images/back0.jpg) center/cover no-repeat;
 display: flex;
 justify-content: center;
@@ -276,6 +275,28 @@ align-items: center;
         width: 100%;
        
         }
+        .home-sectionf{
+            width: 100%;
+            min-height: 80vh;
+        
+        }
+        .home-sections{
+            width: 100%;
+            min-height: 120vh;
+        
+        }
+
+        .home-sectionx{
+            width: 100%;
+            min-height: 60vh;
+        }
+        .home-sectionY{
+            width: 100%;
+            min-height: 0vh;
+        }
+        
+
+
 
 }
 /*about*/
@@ -380,11 +401,11 @@ ul.topnav {
 
 .home-sectionx{
     width: 100%;
-    min-height: 120vh;
+    min-height: 60vh;
 }
 .home-sectionY{
     width: 100%;
-    min-height: 105vh;
+    min-height: 0vh;
 }
 .home-sectionl{
     width: 100%;

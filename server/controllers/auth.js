@@ -1,8 +1,7 @@
 import  jwt from 'jsonwebtoken';
 
-function auth(req,res,next)
 
-{
+const auth = (req,res,next) => {
     const token = req.header('Xtoken');
     if (!token)
     

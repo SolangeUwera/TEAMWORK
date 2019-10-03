@@ -197,7 +197,6 @@ it('It should return 200 if the article succed the update  ', (done) => {
     .set('Xtoken', Token)
     .send(newarticle)
     .end((err, res) => {
-      console.log(res.body);
       expect(res.status).to.equal(200);
       done();
     });
