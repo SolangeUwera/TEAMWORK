@@ -12,11 +12,6 @@ Teamwork is an ​internal social network for organizations’ employees. The go
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/0115401c7908a6e90eeb/maintainability)](https://codeclimate.com/github/SolangeUwera/TEAMWORK/maintainability)
 
-# project description
- UI Images
-
-<img src= "./UI/images/github-SNP9.PNG">
-
 
 # REQUIREMENT FEATURES
 
