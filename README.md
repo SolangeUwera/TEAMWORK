@@ -1,16 +1,21 @@
 # TEAMWORK
 
-[![Build Status](https://travis-ci.org/SolangeUwera/TEAMWORK.svg?branch=develop)](https://travis-ci.org/SolangeUwera/TEAMWORK)
-[![Coverage Status](https://coveralls.io/repos/github/SolangeUwera/TEAMWORK/badge.svg?branch=develop)](https://coveralls.io/github/SolangeUwera/TEAMWORK?branch=develop)
-
 TEAMWORK)
 Teamwork is an ​internal social network for organizations’ employees. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. 
 
+# BADGES
+
+[![Build Status](https://travis-ci.org/SolangeUwera/TEAMWORK.svg?branch=develop)](https://travis-ci.org/SolangeUwera/TEAMWORK)
+
+[![Coverage Status](https://coveralls.io/repos/github/SolangeUwera/TEAMWORK/badge.svg?branch=develop)](https://coveralls.io/github/SolangeUwera/TEAMWORK?branch=develop)
+
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/0115401c7908a6e90eeb/maintainability)](https://codeclimate.com/github/SolangeUwera/TEAMWORK/maintainability)
 
 # project description
  UI Images
 
-<img src= "Images/github-SNP9.PNG">
+<img src= "./UI/images/github-SNP9.PNG">
 
 
 # REQUIREMENT FEATURES
@@ -31,7 +36,8 @@ Teamwork is an ​internal social network for organizations’ employees. The go
 -Javascript
 
 
-Technonlogies
+# Technonlogies
+
 Express JS - API development framework
 
 Node - run time environment for JavaScript
@@ -40,15 +46,16 @@ Mocha and Chai - for testing
 
 Babel JS - JavaScript compiler (ES6 to ES5)
 
-Requirements and Installation steps
+# Requirements and Installation steps
+
 You need the following to be able to run the application
 Node a runtime environment for JavaScript
 
-Postman to test the Api endpoints
+- Postman to test the Api endpoints
 
-Visual studio code for editing and running the app
+- Visual studio code for editing and running the app
 
-how to install dependencies
+# How to install dependencies
 
 - npm install (to install required dependencies)
 
@@ -59,7 +66,8 @@ Testing
 Start The Application
  - npm start
 
-API endpoints
+
+# API endpoints
 
 - POST /auth/signup - Employees can create their own user account
 
@@ -78,9 +86,12 @@ API endpoints
 - GET /articles/<articleId> - Employees can view a specific article.
 
 # Links
+
 1.Pivotal Tracker  Link: https://www.pivotaltracker.com/n/projects/2396221
 
 2.Gh-pages :https://solangeuwera.github.io/TEAMWORK/UI/html/
+
+3.Heroku :https://teamandela.herokuapp.com/
 
 # How it Works.
 OPEN https://solangeuwera.github.io/TEAMWORK/UI/html/  Link and start navigate with different pages.
