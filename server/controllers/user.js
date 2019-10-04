@@ -32,6 +32,7 @@ export const signup = (req, res) => {
         if(!Data) {
             return res.status(404).send({status: 404, error: 'email not found'})
         }
+       
         const hashedPassword = Data.password;
         // CHECKING IF PASSWORD MATCHED
         const matching = Helpers.checkThepassword(hashedPassword, password);
