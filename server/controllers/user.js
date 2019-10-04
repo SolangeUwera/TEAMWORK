@@ -64,7 +64,6 @@ export const signup = (req, res) => {
 export const signin = (req, res) => {
   const { email, password } = req.body;
   const Data = data.users.find(user => user.email === email);
-  console.log(Data)
   if (!Data) {
     return res.status(404).send({ status: 404, error: "email not found" });
   }
